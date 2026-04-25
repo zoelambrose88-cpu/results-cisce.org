@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ISC Result Portal</title>
+
+<style>
+body {
+    margin: 0;
+    font-family:"Times New Roman", serif;
+    background: #ffffff;
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 80px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding-top: 40px;
+    margin-left: 100px;
+}
+
+.header h1 {
+    font-size: 30px;
+    color: #2c6e7e;
+    margin: 0;
+}
+
+.header p {
+    font-size: 12px;
+}
+
+/* BOX */
+.box {
+    width: 60%;
+    margin: 30px auto;
+    border: 1px solid #9fb7c4;
+    background: #fff;
+}
+
+.box-header {
+    background: #e8f0f4;
+    padding: 8px;
+    font-size: 12px;
+    border-bottom: 1px solid #9fb7c4;
+}
+
+.box-body {
+    padding: 15px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* CHECK MESSAGE */
+#checkMessage {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    color: #2c6e7e;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<img src="logo.png" class="logo" onerror="this.src='logo.png.jpg'">
+
+<div class="header">
+    <h1>COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS</h1>
+    <p>CISCE conveys its Best Wishes to all ICSE & ISC candidates</p>
+</div>
+
+<div class="box">
+    <div class="box-header">
+        ICSE & ISC Year 2026 Examination Results
+    </div>
+
+    <div class="box-body">
+
+        <p>
+            <input type="radio">
+            ICSE Examination results will be published on 28/04/2026 11:00 AM IST
+        </p>
+
+        <p onclick="showCheck()">
+            <input type="radio">
+            ISC Examination results will be published on 28/04/2026 11:00 AM IST
+        </p>
+
+    </div>
+</div>
+
+<div id="checkMessage" onclick="goToPage()">
+    check
+</div>
+
+<script>
+function showCheck() {
+    document.getElementById("checkMessage").style.display = "block";
+}
+
+function goToPage() {
+    window.location.href = "isc.html";
+}
+</script>
+
+</body>
+</html>

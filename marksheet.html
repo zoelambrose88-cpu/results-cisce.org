@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ISC Result</title>
+
+<style>
+body {
+    font-family: "Times New Roman", serif;
+    margin: 0;
+    padding: 20px;
+    background: white;
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 90px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.header h2 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* INFO */
+.info {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.info b {
+    display: inline-block;
+    width: 180px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td, th {
+    border: 1px solid #999;
+    padding: 8px;
+}
+
+th {
+    text-align: left;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 30px;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<img src="logo.png" class="logo" onerror="this.src='logo.png.jpg'">
+
+<div id="datetime" style="text-align:right;"></div>
+
+<div class="header">
+    <h1>COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS</h1>
+    <h2>INDIAN SCHOOL CERTIFICATE (CLASS XII) EXAMINATION 2026</h2>
+</div>
+
+<div class="info">
+    <p><b>Candidate Name:</b> ANUSHKA TIWARY</p>
+    <p><b>Candidate ID:</b> 28127721</p>
+    <p><b>School:</b> JH021 / 2265392 SACRED HEART CONVENT SCHOOL, JAMSHEDPUR</p>
+</div>
+
+<table>
+<tr>
+    <th>Subjects</th>
+    <th>Percentage Marks</th>
+</tr>
+<tr><td>ENGLISH </td><td>95</td></tr>
+<tr><td>MATHEMATICS</td><td>79</td></tr>
+<tr><td>ECONOMICS</td><td>93</td></tr>
+<tr><td>POLITICAL SCIENCE</td><td>94</td></tr>
+<tr><td>GEOGRAPHY</td><td>92</td></tr>
+<tr><td>SUPW & COMMUNITY SERVICE</td><td>A</td></tr>
+</table>
+
+<p style="margin-top:15px;"><b>Result:</b> PASS CERTIFICATE AWARDED</p>
+
+<div class="footer">
+    <p><b>Disclaimer</b></p>
+    <p>
+    All information on this print is provided free of cost for personal perusal only,and as such, is made available "AS IS". Every effort has been made to ensure accuracy of the data on this print. However, CISCE does not make any claim about the accuracy or validity of the content on this print , or implied. CISCE will not be responsible for any error or omissions in this web print. In particular but without being delimited thereto, CISCE disclaims any responsibility for typographical error nd other inaccuracies that may be contained within this print, since everybody who access any information on this print are doing so voluntarily and of their own accord, any outcome(decision or claim) of such access is understood to be their sole responsibility. CISCE reserves the right to make changes to this information and print without notice 
+    </p>
+
+    <p>https://results.cisce.org</p>
+</div>
+
+<script>
+function updateTime() {
+    const now = new Date();
+    document.getElementById("datetime").innerText =
+        now.toLocaleDateString() + " " + now.toLocaleTimeString();
+}
+updateTime();
+</script>
+
+</body>
+</html>

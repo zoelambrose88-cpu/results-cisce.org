@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ISC Result 2026</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    background: #ffffff;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 80px;
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0;
+    margin-left: 100px;
+}
+
+.container {
+    width: 85%;
+    margin: 20px auto;
+    display: flex;
+    gap: 40px;
+}
+
+.form-box {
+    width: 40%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+}
+
+.index-row {
+    display: flex;
+    gap: 10px;
+}
+
+.captcha-box {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d35400;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.buttons button {
+    padding: 8px 12px;
+    background: #2c6e7e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.info-box {
+    width: 55%;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<img src="logo.png" class="logo" onerror="this.src='logo.png.jpg'">
+
+<div class="header">
+    <h1>COUNCIL FOR THE INDIAN SCHOOL CERTIFICATE EXAMINATIONS</h1>
+    <p>CISCE conveys its Best Wishes to all ICSE & ISC candidates</p>
+</div>
+
+<div class="container">
+
+    <!-- LEFT FORM -->
+    <div class="form-box">
+
+        <div class="form-group">
+            <label>COURSE</label>
+            <select id="course">
+                <option>- Course -</option>
+                <option>ICSE</option>
+                <option>ISC</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>UID</label>
+            <input type="text" id="uid">
+        </div>
+
+        <div class="form-group">
+            <label>INDEX NO.</label>
+            <div class="index-row">
+                <input type="text" id="index1">
+                <input type="text" id="index2">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>CAPTCHA</label>
+            <div id="captcha" class="captcha-box"></div>
+            <input type="text" id="captchaInput">
+        </div>
+
+        <div class="buttons">
+            <button onclick="validateResult()">Show Result</button>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="info-box">
+
+        <h3>Instructions:</h3>
+        <ul>
+            <li>Enter the Course Code, Candidate UID, Index number and the Captcha.</li>
+            <li>Click on the Show Result button to get the results.</li>
+            <li>Click on the Print Result button to get the Print.</li>
+        </ul>
+
+        <h3>Disclaimer:</h3>
+        <p>
+            All information on this web site (https://results.cisce.org) is provided free of cost for personal perusal only, and as such, is made available "AS IN". Every effort has been made to ensure accuracy of the data on this site. However, CISCE does not make any claim about the accuracy or validity of the content on this site, or its suitability for any specific purpose whatsoever, whether express or implied. CISCE will not be responsible for any errors or omission at this Web site. In particular but without being delimited thereto, CISCE disclaims any responsibility for typographical errors and other inaccuracies that may be contained within this site. Since all readers who access any information on this website are doing so voluntarily and of their own accord, any outcome (decision or claim) of such access is understood to be their sole responsibility. CISCE reserves the right to make changes to this site without notice.   
+	</p>
+
+        <p>This application is best viewed in Google Chrome and Firefox Browsers.</p>
+
+    </div>
+
+</div>
+
+<script>
+let generatedCaptcha = "";
+
+function generateCaptcha() {
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    generatedCaptcha = "";
+    for (let i = 0; i < 5; i++) {
+        generatedCaptcha += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    document.getElementById("captcha").innerText = generatedCaptcha;
+}
+
+function validateResult() {
+    let uid = document.getElementById("uid").value.trim();
+    let index1 = document.getElementById("index1").value.trim();
+    let index2 = document.getElementById("index2").value.trim();
+    let course = document.getElementById("course").value;
+    let captchaInput = document.getElementById("captchaInput").value.trim();
+
+    if (
+        uid === "28127721" &&
+        index1 === "2264382" &&
+        index2 === "184" &&
+        course === "ISC" &&
+        captchaInput === generatedCaptcha
+    ) {
+        window.location.href = "marksheet.html";
+    } else {
+        alert("Invalid details or captcha");
+    }
+}
+
+generateCaptcha();
+</script>
+
+</body>
+</html>
